@@ -7,7 +7,7 @@ const app = express();
 // Import Routes
 const authRoutes = require('./routes/auth');
 const vehicleRoutes = require('./routes/vehicles'); // NEW
-
+const bookingRoutes = require('./routes/bookings');
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -15,6 +15,7 @@ app.use(express.json());
 // Mount Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/vehicles', vehicleRoutes); // NEW
+app.use('/api/bookings', bookingRoutes);
 
 // Health Check
 app.get('/api/health', (req, res) => {
