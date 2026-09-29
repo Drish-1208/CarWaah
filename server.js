@@ -8,6 +8,7 @@ const app = express();
 const authRoutes = require('./routes/auth');
 const vehicleRoutes = require('./routes/vehicles'); // NEW
 const bookingRoutes = require('./routes/bookings');
+const paymentRoutes = require('./routes/payments'); // NEW
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/vehicles', vehicleRoutes); // NEW
 app.use('/api/bookings', bookingRoutes);
+app.use('/api/payments', paymentRoutes); // NEW
 
 // Health Check
 app.get('/api/health', (req, res) => {
